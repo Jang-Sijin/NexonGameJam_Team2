@@ -8,14 +8,15 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rigidbody2D;               // 플레이어 리지드바디
     private float _moveSpeed = 8f;                  // 플레이어 이동 속도
     private int _damege = 10;                       // 플레이어가 받는 대미지
+    private Animator _animator;
     [SerializeField] private SpriteRenderer _sprite;
-    // private Animator _anim;
+    private static readonly int PlayerRun = Animator.StringToHash("Player_Run");
 
     void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         // _sprite = GetComponent<SpriteRenderer>();
-        // _anim = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
         // hands = GetComponentsInChildren<Hand>(true);
         // scanner = GetComponent<Scanner>();
     }
@@ -54,14 +55,13 @@ public class PlayerController : MonoBehaviour
         // 플레이어가 이동중일 떄 처리 내용
         if (_inputVector.x != 0)
         {
-            // _anim.Play("Run");
+            _animator.SetFloat("Speed", _inputVector.magnitude);
             _sprite.flipX = _inputVector.x < 0;
         }
-        // 플레이어가 이동중이 아닐 떄 처리 내용
-        // else
-        // {
-        //  _anim.Play("Stand");
-        // }
+        else // 플레이어가 이동중이 아닐 떄 처리 내용
+        {
+            _animator.SetFloat("Speed", _inputVector.magnitude);
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
