@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rigidbody2D;               // 플레이어 리지드바디
     private float _moveSpeed = 8f;                  // 플레이어 이동 속도
     private int _damege = 10;                       // 플레이어가 받는 대미지
-    // private SpriteRenderer _sprite;
+    [SerializeField] private SpriteRenderer _sprite;
     // private Animator _anim;
 
     void Awake()
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
         if (_inputVector.x != 0)
         {
             // _anim.Play("Run");
-            // _sprite.flipX = _inputVector.x < 0;
+            _sprite.flipX = _inputVector.x < 0;
         }
         // 플레이어가 이동중이 아닐 떄 처리 내용
         // else

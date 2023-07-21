@@ -85,7 +85,7 @@ public class Managers : MonoBehaviour
         if (_gameTime > _maxGameTime)
         {
             _gameTime = _maxGameTime;
-            GameWin();
+            // GameWin();
         }
     }
 

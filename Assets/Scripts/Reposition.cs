@@ -3,7 +3,7 @@ using UnityEngine;
 // [무한맵]
 public class Reposition : MonoBehaviour
 {
-    [SerializeField] private int _tileMoveDistanceValue = 40;
+    [SerializeField] private float _tileMoveDistance = 40;
     private Collider2D _collider2D;
 
     void Awake()
@@ -20,7 +20,7 @@ public class Reposition : MonoBehaviour
         // 플레이어 위치
         Vector3 playerPos = Managers.instance._player.transform.position;
         // 타입맵 위치
-        Vector3 myPos = transform.position;
+        Vector3 myPos = transform.position; 
 
         // 플레이어와 타이맵 거리 절대값
         float difX = Mathf.Abs(playerPos.x - myPos.x);
@@ -35,8 +35,8 @@ public class Reposition : MonoBehaviour
         {
             // 타일맵 이동
             case "Ground":
-                if (difX > difY) transform.Translate(Vector3.right * dirX * _tileMoveDistanceValue);
-                else if (difX < difY) transform.Translate(Vector3.up * dirY * _tileMoveDistanceValue);
+                if (difX > difY) transform.Translate(Vector3.right * dirX * _tileMoveDistance);
+                else if (difX < difY) transform.Translate(Vector3.up * dirY * _tileMoveDistance); 
                 break;
 
             //case "Enemy":
