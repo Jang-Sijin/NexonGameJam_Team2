@@ -8,8 +8,10 @@ public class Skill_Broomstick : MonoBehaviour
     public SkillObjectManager SkillReferenceObject;
     public Skill100 _skill100;
     public Skill110 _skill110;
+    public Skill120 _skill120;
+    public Skill130 _skill130;
+    public Skill140 _skill140;
     public Skill150 _skill150;
-
 
     public void LevelUp(Skill skill)
     {
@@ -24,6 +26,9 @@ public class Skill_Broomstick : MonoBehaviour
     {
         _skill100 = new Skill100(SkillReferenceObject.L1_1[0]);
         _skill110 = new Skill110(SkillReferenceObject.L1_1[1]);
+        _skill120 = new Skill120(SkillReferenceObject.L1_1[2]);
+        _skill130 = new Skill130(SkillReferenceObject.L1_1[3]);
+        _skill140 = new Skill140(SkillReferenceObject.L1_1[4]);
         _skill150 = new Skill150(SkillReferenceObject.L1_1[5]);
     }
 
@@ -31,8 +36,7 @@ public class Skill_Broomstick : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
-            LevelUp(_skill100);
-            LevelUp(_skill110);
+            LevelUp(_skill120);
         }
     }
 
@@ -76,7 +80,7 @@ public class Skill_Broomstick : MonoBehaviour
         {
             skillID = 110;
             skillName = "이기어검술";
-            skillDesc = "플레이어가 바라보는 방향으로 빗자루가 날아갔다 돌아오며 경로에 있는 적들에게 데미지를 줍니다.";
+            skillDesc = "플레이어가 바라보는 방향으로 빗자루가 날아갔다 돌아오며 경로에 있는 적들에게 피해를 줍니다.";
             base.skillObject = skillObject;
             damage = 4f;
             coolDown = 2f;
@@ -135,6 +139,108 @@ public class Skill_Broomstick : MonoBehaviour
         }
     }
 
+    //TODO: 빗자루 스프라이트 적용
+    public class Skill120 : Skill
+    {
+        public Skill120(GameObject skillObject)
+        {
+            skillID = 120;
+            skillName = "소용돌이치는 빗자루";
+            skillDesc = "플레이어의 현재 위치에 회전하는 빗자루를 설치해서 닿는 적들에게 피해를 입힌다.";
+            base.skillObject = skillObject;
+            damage = 1f;
+            coolDown = 2f;
+            skillLevel = 0;
+        }
+
+        public override IEnumerator SkillBehaviour(PlayerController player)
+        {
+            Transform originalParent = skillObject.transform.parent;
+            SkillCollisionRetriever_TriggerStay SCR = skillObject.GetComponent<SkillCollisionRetriever_TriggerStay>();
+            while (true)
+            {
+                skillObject.transform.position = player.transform.position;
+                skillObject.transform.SetParent(null);
+                skillObject.SetActive(true);
+                SCR.Damage = 0f;
+                yield return new WaitForSeconds(0.5f);
+                SCR.Damage = this.damage;
+                yield return new WaitForEndOfFrame();
+                yield return new WaitForEndOfFrame();
+                SCR.Damage = 0f;
+                yield return new WaitForSeconds(0.5f);
+                SCR.Damage = this.damage;
+                yield return new WaitForEndOfFrame();
+                yield return new WaitForEndOfFrame();
+                SCR.Damage = 0f;
+                yield return new WaitForSeconds(0.5f);
+                SCR.Damage = this.damage;
+                yield return new WaitForEndOfFrame();
+                yield return new WaitForEndOfFrame();
+                SCR.Damage = 0f;
+                yield return new WaitForSeconds(0.5f);
+                SCR.Damage = this.damage;
+                yield return new WaitForEndOfFrame();
+                yield return new WaitForEndOfFrame();
+                SCR.Damage = 0f;
+                yield return new WaitForSeconds(0.5f);
+                SCR.Damage = this.damage;
+                yield return new WaitForEndOfFrame();
+                yield return new WaitForEndOfFrame();
+                SCR.Damage = 0f;
+                yield return new WaitForSeconds(0.5f);
+                SCR.Damage = this.damage;
+                yield return new WaitForEndOfFrame();
+                yield return new WaitForEndOfFrame();
+                skillObject.SetActive(false);
+                skillObject.transform.SetParent(originalParent);
+                yield return new WaitForSeconds(coolDown);
+
+                //When off flag is set
+                //skillObject.SetActive(false);
+                //yield break;
+            }
+            yield return null;
+        }
+    }
+
+    //TODO: 스킬 구현
+    public class Skill130 : Skill
+    {
+        public Skill130(GameObject skillObject)
+        {
+            skillID = 130;
+            skillName = "빗자루가 지킨다";
+            skillDesc = "빗자루로 방벽을 세워 피해를 흡수하는 보호막을 얻는다.";
+            base.skillObject = skillObject;
+            damage = 0f;
+            coolDown = 30f;
+            skillLevel = 0;
+        }
+        public override IEnumerator SkillBehaviour(PlayerController player)
+        {
+            yield return null;
+        }
+    }
+
+    //TODO: 스킬 구현
+    public class Skill140 : Skill
+    {
+        public Skill140(GameObject skillObject)
+        {
+            skillID = 140;
+            skillName = "공포의 빗자루";
+            skillDesc = "빗자루를 휘둘러 적중한 적들을 밀쳐낸다. ";
+            base.skillObject = skillObject;
+            damage = 3f;
+            coolDown = 2.5f;
+            skillLevel = 0;
+        }
+        public override IEnumerator SkillBehaviour(PlayerController player)
+        {
+            yield return null;
+        }
+    }
     public class Skill150 : Skill
     {
         public Skill150(GameObject skillObject)
