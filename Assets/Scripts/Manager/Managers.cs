@@ -27,6 +27,8 @@ public class Managers : MonoBehaviour
     // public ReStart uiResult;
     public GameObject enemyCleaner;
 
+
+
     void Awake()
     {
         instance = this;
@@ -87,11 +89,11 @@ public class Managers : MonoBehaviour
         }
     }
 
-    public void GetExp(int value)
+    public void GetExp()
     {
         if (!isLive) return;
-        exp += value;
-        if (exp >= nextExp[Mathf.Min(level, nextExp.Length - 1)])
+        exp++;
+        if (exp == nextExp[Mathf.Min(level, nextExp.Length - 1)])
         {
             level++;
             exp = 0;

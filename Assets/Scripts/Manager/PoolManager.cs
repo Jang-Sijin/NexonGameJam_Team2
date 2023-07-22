@@ -38,16 +38,5 @@ public class PoolManager : MonoBehaviour
         return select;
     }
 
-    public void GiveDamage()
-    {
-        foreach (var enemies in _pools)
-        {
-            foreach (var enemy in enemies)
-            {
-                if(enemy.activeSelf && enemy.GetComponent<EnemyController>() != null)
-                    enemy.GetComponent<EnemyController>().GetDamage(5);
-            }
-        }
-    }
 
 }
