@@ -46,12 +46,10 @@ public class Reposition : MonoBehaviour
                 else if (difX >= difY)
                 {
                     transform.Translate(Vector3.right * dirX * _tileMoveDistance);
-                    Debug.Log("rigt");
                 }
                 else if (difX <= difY)
                 {
                     transform.Translate(Vector3.up * dirY * _tileMoveDistance);
-                    Debug.Log("up");
                 }
                 break;
             case "Enemy":

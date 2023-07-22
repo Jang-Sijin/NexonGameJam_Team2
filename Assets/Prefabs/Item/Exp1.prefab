@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5715426537601538751}
   - component: {fileID: 4216019338494547821}
   - component: {fileID: -2407011739873399214}
-  - component: {fileID: -8931118813922718454}
+  - component: {fileID: 2287912873716263014}
   m_Layer: 6
-  m_Name: Exp2
+  m_Name: Exp1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: ae32805814a5fda4485c7ae88aabf11f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 411b28ddfd372c24b8d483f23e124643, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exp: 1
---- !u!58 &-8931118813922718454
+--- !u!58 &2287912873716263014
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

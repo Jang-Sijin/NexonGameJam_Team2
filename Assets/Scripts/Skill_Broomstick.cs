@@ -36,7 +36,10 @@ public class Skill_Broomstick : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
+            LevelUp(_skill100);
+            LevelUp(_skill110);
             LevelUp(_skill120);
+            LevelUp(_skill150);
         }
     }
 
