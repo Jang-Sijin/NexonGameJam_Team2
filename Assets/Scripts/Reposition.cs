@@ -38,7 +38,7 @@ public class Reposition : MonoBehaviour
         {
             // 타일맵 이동
             case "Ground":
-                if (Mathf.Abs(difX - difY) <= 1f)
+                if (Mathf.Abs(difX - difY) <= 3f)
                 {
                     transform.Translate(Vector3.up * dirY * _tileMoveDistance);
                     transform.Translate(Vector3.right * dirX * _tileMoveDistance);
