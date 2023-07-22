@@ -18,4 +18,12 @@ public abstract class Skill
     public float coolDown;
 
     public abstract IEnumerator SkillBehaviour(PlayerController player);
+
+    public void LevelUp()
+    {
+        skillLevel++;
+        if (skillLevel == 1)
+            return;
+        damage += 2;
+    }
 }
