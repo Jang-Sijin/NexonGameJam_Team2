@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9de26c83365a4014c9dde315a1563ebc
+guid: 4c4ae5223b07d0b4bad2e9b21e840e94
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -94,19 +94,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -123,49 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Skill_2_5_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 4096
-        width: 1024
-        height: 1024
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4dac9d1e532158045a5cf566515668a1
-      internalID: 794921005
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Skill_2_5_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 3072
-        width: 1024
-        height: 1024
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b904baf368daa90458cfc5e6ce5c126a
-      internalID: -1692207892
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Skill_2_5_2
+      name: Skill_2_BOMB_0
       rect:
         serializedVersion: 2
         x: 0
@@ -179,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a34d808c0557334e93fc21df7c82d59
-      internalID: -773393554
+      spriteID: 780426825eb6ae64494c194d1661d7a5
+      internalID: 1244934123
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skill_2_5_3
+      name: Skill_2_BOMB_1
       rect:
         serializedVersion: 2
         x: 0
@@ -200,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 451c6d2f8669c5b43b22fef8cf588436
-      internalID: -1451079361
+      spriteID: fce63227465352149826c986c189329f
+      internalID: 608081046
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skill_2_5_4
+      name: Skill_2_BOMB_2
       rect:
         serializedVersion: 2
         x: 0
@@ -221,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 706a3f81b9dfdb5448d6dc71f64dc0e4
-      internalID: 1417556123
+      spriteID: 13fdfcf7f1c77f34fa5405951487ce21
+      internalID: -336512240
       vertices: []
       indices: 
       edges: []
@@ -238,11 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Skill_2_5_0: 794921005
-      Skill_2_5_1: -1692207892
-      Skill_2_5_2: -773393554
-      Skill_2_5_3: -1451079361
-      Skill_2_5_4: 1417556123
+      Skill_2_BOMB_0: 1244934123
+      Skill_2_BOMB_1: 608081046
+      Skill_2_BOMB_2: -336512240
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

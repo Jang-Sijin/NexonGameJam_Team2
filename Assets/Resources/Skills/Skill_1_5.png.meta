@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9de26c83365a4014c9dde315a1563ebc
+guid: 13f33b18a0a626e49a1945181408a128
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -94,19 +94,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -123,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Skill_2_5_0
+      name: Skill_1_5_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 4096
-        width: 1024
-        height: 1024
+        y: 6468
+        width: 2192
+        height: 2156
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dac9d1e532158045a5cf566515668a1
-      internalID: 794921005
+      spriteID: 1148a585120682c4f81d90a789f9158d
+      internalID: -2107517185
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skill_2_5_1
+      name: Skill_1_5_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 3072
-        width: 1024
-        height: 1024
+        y: 2156
+        width: 2192
+        height: 2156
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b904baf368daa90458cfc5e6ce5c126a
-      internalID: -1692207892
+      spriteID: bb259bd4db114c84f971a776fee2edf9
+      internalID: -1089209746
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skill_2_5_2
+      name: Skill_1_5_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 2048
-        width: 1024
-        height: 1024
+        y: 4312
+        width: 2192
+        height: 2156
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,41 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a34d808c0557334e93fc21df7c82d59
-      internalID: -773393554
+      spriteID: abb5619743bec9a42bfc9af0e16a8b69
+      internalID: 215371023
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skill_2_5_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1024
-        width: 1024
-        height: 1024
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 451c6d2f8669c5b43b22fef8cf588436
-      internalID: -1451079361
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Skill_2_5_4
+      name: Skill_1_5_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1024
-        height: 1024
+        width: 2192
+        height: 2156
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 706a3f81b9dfdb5448d6dc71f64dc0e4
-      internalID: 1417556123
+      spriteID: 7afb09238624a024d85afff9abc22a0e
+      internalID: -1144687152
       vertices: []
       indices: 
       edges: []
@@ -238,11 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Skill_2_5_0: 794921005
-      Skill_2_5_1: -1692207892
-      Skill_2_5_2: -773393554
-      Skill_2_5_3: -1451079361
-      Skill_2_5_4: 1417556123
+      Skill_1_5_0: -2107517185
+      Skill_1_5_1: 215371023
+      Skill_1_5_2: -1089209746
+      Skill_1_5_3: -1144687152
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
