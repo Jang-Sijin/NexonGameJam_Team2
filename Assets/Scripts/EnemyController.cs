@@ -109,8 +109,23 @@ public class EnemyController : MonoBehaviour
 
     }
 
+    public void GetDamage(float dmg)
+    {
+        if (Health <= dmg)
+        {
+            Health = 0;
+            Dead();
+        }
+        else
+        {
+            Health -= dmg;
+        }
+    }
+
     void Dead()
     {
+        GameObject exp = Managers.instance.Pool.Get(7);
+        exp.transform.position = transform.localPosition;
         gameObject.SetActive(false);
     }
 }
