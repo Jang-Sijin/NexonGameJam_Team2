@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 2643521701873785845}
   - component: {fileID: 5715426537601538751}
   - component: {fileID: 4216019338494547821}
-  - component: {fileID: 4743175104853648411}
   - component: {fileID: -2407011739873399214}
+  - component: {fileID: 8659207051392349476}
   m_Layer: 6
-  m_Name: Enemy_Nomal (2)
+  m_Name: Exp3
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 236c0b2857f464b429ddc7cd49505bce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d2a91d5422b975b4e9c62b384f6c25cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -136,8 +136,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &4743175104853648411
-CapsuleCollider2D:
+--- !u!114 &-2407011739873399214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6640159243157731578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a8070c3115ed24687fd0df053128d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exp: 1
+--- !u!58 &8659207051392349476
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -168,19 +181,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
-  m_Direction: 0
---- !u!114 &-2407011739873399214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6640159243157731578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16a8070c3115ed24687fd0df053128d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  exp: 1
+  m_Offset: {x: -0.003758669, y: 0.015034616}
+  serializedVersion: 2
+  m_Radius: 0.30979252
