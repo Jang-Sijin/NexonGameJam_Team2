@@ -8,22 +8,22 @@ public class Managers : MonoBehaviour
     public static Managers instance;
     [Header("#Game Control")]
     public PlayerController _player;
-    // public PoolManager Pool;
+    public PoolManager Pool;
     public int speed;
     public bool isLive;
 
-    [Header("#Player Inpo")]
+    [Header("#Player Info")]
     public float health;
     public float maxHealth = 100;
     public int level;
     public int kill;
     public int exp;
     public int[] nextExp = { 3, 5, 10, 30, 60, 100, 150, 210, 180, 360, 450, 600, 700, 800, 1000, 1200 };
+    
     [Header("#Game Object")]
     public float _gameTime;
     public float _maxGameTime = 2 * 10f;
     // public LevelUp uiLevelUp;
-
     // public ReStart uiResult;
     public GameObject enemyCleaner;
 

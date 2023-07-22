@@ -16,7 +16,13 @@ public class HUD : MonoBehaviour
 
     public InfoType type;
     [SerializeField] private TMP_Text myTimer;
-    [SerializeField] private Slider mySlider;
+    [SerializeField] private TMP_Text myLevel;
+    [SerializeField] private Slider myLevel_Slider;
+
+    private void Awake()
+    {
+        myLevel_Slider.interactable = false;
+    }
 
     void LateUpdate()
     {

@@ -6,7 +6,7 @@ public class Reposition : MonoBehaviour
     [SerializeField] private float _tileMoveDistance = 40;
     private Collider2D _collider2D;
 
-    void Awake()
+    void Start()
     {
         _collider2D = GetComponent<Collider2D>();
     }
@@ -16,7 +16,7 @@ public class Reposition : MonoBehaviour
     {
         if (!collision.CompareTag("Area")) 
             return;
-
+        
         // 플레이어 위치
         Vector3 playerPos = Managers.instance._player.transform.position;
         // 타입맵 위치
@@ -54,10 +54,9 @@ public class Reposition : MonoBehaviour
                     Debug.Log("up");
                 }
                 break;
-
-            //case "Enemy":
-            //    if (_collider2D.enabled) transform.Translate(playerDir * 20 + new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f), 0f));
-            //    break;
+            case "Enemy":
+                if (_collider2D.enabled) transform.Translate(playerPos * 20 + new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f), 0f));
+                break;
         }
     }
 
