@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public float _moveSpeed = 8f;                  // 플레이어 이동 속도
     private int _damege = 10;                       // 플레이어가 받는 대미지
     private Animator _animator;
-    [SerializeField] private SpriteRenderer _sprite;
+    public SpriteRenderer _sprite;
     private static readonly int PlayerRun = Animator.StringToHash("Player_Run");
 
     void Awake()
