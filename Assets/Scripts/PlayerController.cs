@@ -27,6 +27,11 @@ public class PlayerController : MonoBehaviour
         if (!Managers.instance.isLive) 
             return;
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Managers.instance.Pool.GiveDamage();
+        }
+
         // 플레이어가 생존 상태일 때, 이동관련 키입력 처리
         _inputVector.x = Input.GetAxisRaw("Horizontal");
         _inputVector.y = Input.GetAxisRaw("Vertical");
