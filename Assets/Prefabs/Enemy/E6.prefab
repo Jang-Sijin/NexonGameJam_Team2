@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1389510982563596979}
   - component: {fileID: 7098113834115257727}
   - component: {fileID: 563678826902645260}
+  - component: {fileID: -167213239500087949}
   m_Layer: 6
   m_Name: E6
   m_TagString: Enemy
@@ -190,3 +191,16 @@ MonoBehaviour:
   damage: 0
   _speed: 2.5
   enemyData: {fileID: 11400000, guid: fa4f7e54a4e74234698ddc6a387ac826, type: 2}
+--- !u!114 &-167213239500087949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9071838845472562730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83c3fb62bb8ef5441908fc742faa667a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tileMoveDistance: 40
