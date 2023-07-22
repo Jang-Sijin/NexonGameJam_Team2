@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Skill_Broomstick : MonoBehaviour
 {
-    public PlayerController player = Managers.instance._player;
+    public PlayerController player;
     public SkillObjectManager SkillReferenceObject;
     public Skill100 _skill100;
     public Skill110 _skill110;
@@ -24,6 +24,7 @@ public class Skill_Broomstick : MonoBehaviour
 
     private void Start()
     {
+        player = Managers.instance._player;
         _skill100 = new Skill100(SkillReferenceObject.L1_1[0]);
         _skill110 = new Skill110(SkillReferenceObject.L1_1[1]);
         _skill120 = new Skill120(SkillReferenceObject.L1_1[2]);

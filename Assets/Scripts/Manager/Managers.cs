@@ -5,7 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class Managers : MonoBehaviour
 {
-    public static Managers instance;
+    private static Managers Instance;
+    public static Managers instance
+    {
+        get
+        {
+            if (Instance == null)
+            {
+                Instance = FindObjectOfType<Managers>();
+            }
+
+            return Instance;
+        }
+    }
     [Header("#Game Control")]
     public PlayerController _player;
     public PoolManager Pool;
@@ -19,7 +31,7 @@ public class Managers : MonoBehaviour
     public int kill;
     public int exp;
     public int[] nextExp = { 3, 5, 10, 30, 60, 100, 150, 210, 180, 360, 450, 600, 700, 800, 1000, 1200 };
-    
+
     [Header("#Game Object")]
     public float _gameTime;
     public float _maxGameTime = 30 * 60f;
@@ -31,8 +43,13 @@ public class Managers : MonoBehaviour
 
     void Awake()
     {
-        instance = this;
+        if (instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        DontDestroyOnLoad(this.gameObject);
     }
+
     public void GameStart()
     {
         health = maxHealth;

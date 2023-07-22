@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Skill_Roomba : MonoBehaviour
 {
-    public PlayerController player = Managers.instance._player;
+    public PlayerController player;
     public SkillObjectManager SkillReferenceObject;
     public Skill500 _skill500;
     public Skill510 _skill510;
@@ -24,6 +24,7 @@ public class Skill_Roomba : MonoBehaviour
 
     private void Start()
     {
+        player = Managers.instance._player;
         _skill500 = new Skill500(SkillReferenceObject.L1_5[0]);
         _skill510 = new Skill510(SkillReferenceObject.L1_5[1]);
         _skill520 = new Skill520(SkillReferenceObject.L1_5[2]);

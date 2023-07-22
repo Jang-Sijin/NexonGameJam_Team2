@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Skill_Water : MonoBehaviour
 {
-    public PlayerController player = Managers.instance._player;
+    public PlayerController player;
     public SkillObjectManager SkillReferenceObject;
     public Skill200 _skill200;
     public Skill210 _skill210;
@@ -24,6 +24,7 @@ public class Skill_Water : MonoBehaviour
 
     private void Start()
     {
+        player = Managers.instance._player;
         _skill200 = new Skill200(SkillReferenceObject.L1_2[0]);
         _skill210 = new Skill210(SkillReferenceObject.L1_2[1]);
         _skill220 = new Skill220(SkillReferenceObject.L1_2[2]);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Skill_Light : MonoBehaviour
 {
-    public PlayerController player = Managers.instance._player;
+    public PlayerController player;
     public SkillObjectManager SkillReferenceObject;
     public Skill400 _skill400;
     public Skill410 _skill410;
@@ -24,6 +24,7 @@ public class Skill_Light : MonoBehaviour
 
     private void Start()
     {
+        player = Managers.instance._player;
         _skill400 = new Skill400(SkillReferenceObject.L1_4[0]);
         _skill410 = new Skill410(SkillReferenceObject.L1_4[1]);
         _skill420 = new Skill420(SkillReferenceObject.L1_4[2]);

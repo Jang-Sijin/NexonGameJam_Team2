@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Skill_Web : MonoBehaviour
 {
-    public PlayerController player = Managers.instance._player;
+    public PlayerController player;
     public SkillObjectManager SkillReferenceObject;
     public Skill300 _skill300;
     public Skill310 _skill310;
@@ -24,6 +24,7 @@ public class Skill_Web : MonoBehaviour
 
     private void Start()
     {
+        player = Managers.instance._player;
         _skill300 = new Skill300(SkillReferenceObject.L1_3[0]);
         _skill310 = new Skill310(SkillReferenceObject.L1_3[1]);
         _skill320 = new Skill320(SkillReferenceObject.L1_3[2]);
