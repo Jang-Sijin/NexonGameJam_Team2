@@ -146,7 +146,7 @@ public class Skill_Broomstick : MonoBehaviour
         {
             skillID = 120;
             skillName = "소용돌이치는 빗자루";
-            skillDesc = "플레이어의 현재 위치에 회전하는 빗자루를 설치해서 닿는 적들에게 피해를 입힌다.";
+            skillDesc = "플레이어의 현재 위치에 회전하는 빗자루를 설치해서 닿는 적들에게 지속적으로 피해를 입힌다.";
             base.skillObject = skillObject;
             damage = 1f;
             coolDown = 2f;
