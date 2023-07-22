@@ -12,5 +12,8 @@ public abstract class Skill
     public Sprite skillIcon;
     public GameObject skillObject;
 
+    public float damage;
+    public float coolDown;
+
     public abstract IEnumerator SkillBehaviour(PlayerController player);
 }

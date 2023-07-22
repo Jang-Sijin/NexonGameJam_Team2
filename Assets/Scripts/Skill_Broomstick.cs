@@ -7,34 +7,45 @@ public class Skill_Broomstick : MonoBehaviour
     public PlayerController player = Managers.instance._player;
     public SkillObjectManager SkillReferenceObject;
 
-    //private void Start()
-    //{
-    //    var obj = new Skill100(SkillReferenceObject.L1_1[0]);
-    //    obj.SkillBehaviour(player);
-    //}
+    private void Start()
+    {
+        var obj = new Skill100(SkillReferenceObject.L1_1[0]);
+        StartCoroutine(obj.SkillBehaviour(player));
+    }
 
     public class Skill100 : Skill
     {
         public Skill100(GameObject skillObject)
         {
-            base.skillID = 100;
-            base.skillName = "빗자루";
-            base.skillDesc = "좌우로 적을 관통하는 근접공격을 합니다.";
+            skillID = 100;
+            skillName = "빗자루";
+            skillDesc = "좌우로 적을 관통하는 근접공격을 합니다.";
             base.skillObject = skillObject;
+            damage = 3f;
+            coolDown = 1.5f;
         }
         public override IEnumerator SkillBehaviour(PlayerController player)
         {
+            Vector2 initPos = skillObject.transform.localPosition;
             SpriteRenderer SR = skillObject.GetComponent<SpriteRenderer>();
-            Collider2D collider = skillObject.GetComponent<BoxCollider2D>();
+            SkillCollisionRetriever SCR = skillObject.GetComponent<SkillCollisionRetriever>();
             while (true)
             {
-                if (player._sprite.flipX)
+                skillObject.SetActive(true);
+                SR.flipX = player._sprite.flipX;
+                skillObject.transform.localPosition = SR.flipX ? new Vector2(-initPos.x, initPos.y) : new Vector2(initPos.x, initPos.y);
+                foreach (Collider2D collider in SCR.Rtrn)
                 {
-                    SR.flipX = true;
-                    skillObject.transform.position = new Vector2(skillObject.transform.position.x, -skillObject.transform.position.y);
+                    collider.GetComponent<EnemyController>().GetDamage(3f);
                 }
-                
-                yield break;
+                SCR.Rtrn.Clear();
+                yield return new WaitForSeconds(0.25f);
+                skillObject.SetActive(false);
+                yield return new WaitForSeconds(coolDown);
+
+                //When off flag is set
+                //skillObject.SetActive(false);
+                //yield break;
             }
             yield return null;
         }
