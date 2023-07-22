@@ -8,7 +8,8 @@ public class EnemyController : MonoBehaviour
     public float MaxHealth; // 최대 체력
     public RuntimeAnimatorController[] animCon; // 몬스터 애니메이션 컨트롤러
     public Rigidbody2D Target; // 적군 타겟
-    
+    public float damage;
+
     [SerializeField] private float _speed = 2.5f; // 이동 속도
     private Animator _animator; // 적군 애니메이터
     private bool _isLive; // 생존 체크
@@ -16,6 +17,8 @@ public class EnemyController : MonoBehaviour
     private SpriteRenderer _spriteRenderer; // 적군 이미지
     private Collider2D _collider2D;
     private WaitForFixedUpdate _wait;
+
+    public EnemyData enemyData;
 
     void Awake()
     {
@@ -57,20 +60,20 @@ public class EnemyController : MonoBehaviour
     {
         Target = Managers.instance._player.GetComponent<Rigidbody2D>();
         _isLive = true;
-        _isLive = true;
         _collider2D.enabled = true;
         _rigidbody2D.simulated = true;
         _spriteRenderer.sortingOrder = 2;
         _animator.SetBool("Dead", false);
-        Health = MaxHealth;
+        Health = enemyData.HP;
     }
 
-    public void Init(SpawnData data)
+    public void Init()
     {
         // _animator.runtimeAnimatorController = animCon[data._spriteType];
-        _speed = data._speed;
-        MaxHealth = data._health;
-        Health = data._health;
+        _speed = enemyData.speed;
+        MaxHealth = enemyData.HP;
+        Health = enemyData.HP;
+        damage = enemyData.damage;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

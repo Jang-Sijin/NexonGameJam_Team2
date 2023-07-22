@@ -22,7 +22,7 @@ public class Managers : MonoBehaviour
     
     [Header("#Game Object")]
     public float _gameTime;
-    public float _maxGameTime = 2 * 10f;
+    public float _maxGameTime = 30 * 60f;
     // public LevelUp uiLevelUp;
     // public ReStart uiResult;
     public GameObject enemyCleaner;
