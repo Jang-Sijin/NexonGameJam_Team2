@@ -27,8 +27,6 @@ public class Managers : MonoBehaviour
     // public ReStart uiResult;
     public GameObject enemyCleaner;
 
-
-
     void Awake()
     {
         instance = this;

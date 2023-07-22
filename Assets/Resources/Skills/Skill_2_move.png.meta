@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9de26c83365a4014c9dde315a1563ebc
+guid: d7cb521f9bde8f34b895e332e2983e4d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Skill_2_5_0
+      name: Skill_2_move_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27979c665e0b8d842912956ead011433
-      internalID: 31213543
+      spriteID: 16ffd74921db188469233a349427af94
+      internalID: -230630168
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skill_2_5_1
+      name: Skill_2_move_1
       rect:
         serializedVersion: 2
         x: 0
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05f721622c9d2ca42b9d1a0b57092aa5
-      internalID: 980297549
+      spriteID: 655af66d05b8ab24a9fd58935172d2fe
+      internalID: -246467031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skill_2_5_2
+      name: Skill_2_move_2
       rect:
         serializedVersion: 2
         x: 0
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: deb0d2ac597cc8c48b13d9b61f18c182
-      internalID: -565971915
+      spriteID: ebc0305eba22fe745b870a9df1a4f4c9
+      internalID: -614414349
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skill_2_5_3
+      name: Skill_2_move_3
       rect:
         serializedVersion: 2
         x: 0
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59ca8f47893fc5f42bc467f2f7d0bfd7
-      internalID: -172903964
+      spriteID: 9a35103c3b87cae45932797d33b6b06c
+      internalID: 1613846796
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skill_2_5_4
+      name: Skill_2_move_4
       rect:
         serializedVersion: 2
         x: 0
@@ -221,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8d4b654121f80847a87ab965ce4dcfc
-      internalID: -1888845754
+      spriteID: e2328bf3ecdbd4249ad34cd5d004d04d
+      internalID: -407532208
       vertices: []
       indices: 
       edges: []
@@ -238,11 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Skill_2_5_0: 31213543
-      Skill_2_5_1: 980297549
-      Skill_2_5_2: -565971915
-      Skill_2_5_3: -172903964
-      Skill_2_5_4: -1888845754
+      Skill_2_move_0: -230630168
+      Skill_2_move_1: -246467031
+      Skill_2_move_2: -614414349
+      Skill_2_move_3: 1613846796
+      Skill_2_move_4: -407532208
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
