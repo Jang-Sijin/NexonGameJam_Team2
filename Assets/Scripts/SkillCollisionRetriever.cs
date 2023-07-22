@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class SkillCollisionRetriever : MonoBehaviour
 {
-    public List<Collider> Rtrn = new List<Collider>();
-    
+    public float Damage { get; set; }
+
     /// <summary>
     /// Correspondingly each skill has to free the list containing the colliders on execute
     /// </summary>
     /// <param name="other"></param>
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!Rtrn.Contains(other))
+        if (other.CompareTag("Enemy"))
         {
-            Rtrn.Add(other);
+            other.GetComponent<EnemyController>().GetDamage(Damage);
         }
     }
 }
