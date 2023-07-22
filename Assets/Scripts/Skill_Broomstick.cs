@@ -13,7 +13,7 @@ public class Skill_Broomstick : MonoBehaviour
 
     public void LevelUp(Skill skill)
     {
-        skill.skillLevel++;
+        skill.LevelUp();
         if (skill.skillLevel == 1)
         {
             StartCoroutine(skill.SkillBehaviour(player));
