@@ -8,7 +8,10 @@ public class Exprience : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Managers.instance.GetExp(exp);
-        gameObject.SetActive(false);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Managers.instance.GetExp(exp);
+            gameObject.SetActive(false);
+        }
     }
 }

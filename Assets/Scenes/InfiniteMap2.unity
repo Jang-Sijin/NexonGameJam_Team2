@@ -17975,8 +17975,84 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2891741285360200007, guid: 9a6969718d2cc5b429faa7826f9de589, type: 3}
+      propertyPath: bossData.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891741285360200007, guid: 9a6969718d2cc5b429faa7826f9de589, type: 3}
       propertyPath: bossEliteData.Array.size
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891741285360200007, guid: 9a6969718d2cc5b429faa7826f9de589, type: 3}
+      propertyPath: bossData.Array.data[0].monster
+      value: 
+      objectReference: {fileID: 4366916820217003585, guid: bfe23f308250fc444bd63e3eaab237c8, type: 3}
+    - target: {fileID: 2891741285360200007, guid: 9a6969718d2cc5b429faa7826f9de589, type: 3}
+      propertyPath: bossData.Array.data[1].monster
+      value: 
+      objectReference: {fileID: 1841647311024424401, guid: ebf31ad7a574ed54c890e6c4dd13c97e, type: 3}
+    - target: {fileID: 2891741285360200007, guid: 9a6969718d2cc5b429faa7826f9de589, type: 3}
+      propertyPath: bossData.Array.data[2].monster
+      value: 
+      objectReference: {fileID: 1876496489812217995, guid: 2d6a7512fca5da94084dd8265dee2d3a, type: 3}
+    - target: {fileID: 2891741285360200007, guid: 9a6969718d2cc5b429faa7826f9de589, type: 3}
+      propertyPath: bossData.Array.data[3].monster
+      value: 
+      objectReference: {fileID: 2278009550596366629, guid: c97e707201c3d8e4bad3b917609aa228, type: 3}
+    - target: {fileID: 2891741285360200007, guid: 9a6969718d2cc5b429faa7826f9de589, type: 3}
+      propertyPath: bossData.Array.data[4].monster
+      value: 
+      objectReference: {fileID: 5741317332230759025, guid: be9e29e6e9d89c24eb6e70b416140e0e, type: 3}
+    - target: {fileID: 2891741285360200007, guid: 9a6969718d2cc5b429faa7826f9de589, type: 3}
+      propertyPath: bossData.Array.data[5].monster
+      value: 
+      objectReference: {fileID: 8958713539933285717, guid: df0f7e63348eb5e4487bffada927ae93, type: 3}
+    - target: {fileID: 2891741285360200007, guid: 9a6969718d2cc5b429faa7826f9de589, type: 3}
+      propertyPath: bossData.Array.data[6].monster
+      value: 
+      objectReference: {fileID: 4443239352530032733, guid: bad6daecae444554990ebba4db8173c7, type: 3}
+    - target: {fileID: 2891741285360200007, guid: 9a6969718d2cc5b429faa7826f9de589, type: 3}
+      propertyPath: bossData.Array.data[7].monster
+      value: 
+      objectReference: {fileID: 1841647311024424401, guid: f9cf94bda72c76341825acdf31bd4d68, type: 3}
+    - target: {fileID: 2891741285360200007, guid: 9a6969718d2cc5b429faa7826f9de589, type: 3}
+      propertyPath: bossData.Array.data[8].monster
+      value: 
+      objectReference: {fileID: 1841647311024424401, guid: f9cf94bda72c76341825acdf31bd4d68, type: 3}
+    - target: {fileID: 2891741285360200007, guid: 9a6969718d2cc5b429faa7826f9de589, type: 3}
+      propertyPath: bossData.Array.data[0].spawnTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891741285360200007, guid: 9a6969718d2cc5b429faa7826f9de589, type: 3}
+      propertyPath: bossData.Array.data[1].spawnTime
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891741285360200007, guid: 9a6969718d2cc5b429faa7826f9de589, type: 3}
+      propertyPath: bossData.Array.data[2].spawnTime
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891741285360200007, guid: 9a6969718d2cc5b429faa7826f9de589, type: 3}
+      propertyPath: bossData.Array.data[3].spawnTime
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891741285360200007, guid: 9a6969718d2cc5b429faa7826f9de589, type: 3}
+      propertyPath: bossData.Array.data[4].spawnTime
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891741285360200007, guid: 9a6969718d2cc5b429faa7826f9de589, type: 3}
+      propertyPath: bossData.Array.data[5].spawnTime
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891741285360200007, guid: 9a6969718d2cc5b429faa7826f9de589, type: 3}
+      propertyPath: bossData.Array.data[6].spawnTime
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891741285360200007, guid: 9a6969718d2cc5b429faa7826f9de589, type: 3}
+      propertyPath: bossData.Array.data[7].spawnTime
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891741285360200007, guid: 9a6969718d2cc5b429faa7826f9de589, type: 3}
+      propertyPath: bossData.Array.data[8].spawnTime
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 2891741285360200007, guid: 9a6969718d2cc5b429faa7826f9de589, type: 3}
       propertyPath: bossEliteData.Array.data[1].isBoss
