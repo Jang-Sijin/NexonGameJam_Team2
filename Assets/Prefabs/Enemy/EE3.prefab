@@ -155,7 +155,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   damage: 0
   _speed: 2.5
-  enemyData: {fileID: 11400000, guid: 9fc07c1f5407cd649ad37105b504e8ae, type: 2}
+  enemyData: {fileID: 11400000, guid: da61efa25207f6f44a86adbbbf55c438, type: 2}
 --- !u!114 &339614320731865622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,7 +169,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tileMoveDistance: 40
-  _collider2D: {fileID: 0}
 --- !u!60 &5266904744995338433
 PolygonCollider2D:
   m_ObjectHideFlags: 0
