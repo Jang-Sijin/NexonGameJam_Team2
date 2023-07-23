@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4216019338494547821}
   - component: {fileID: -2407011739873399214}
   - component: {fileID: 8659207051392349476}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Exp3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6640159243157731578}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
