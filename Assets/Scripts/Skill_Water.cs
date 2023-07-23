@@ -13,6 +13,8 @@ public class Skill_Water : MonoBehaviour
     public Skill240 _skill240;
     public Skill250 _skill250;
 
+    public List<GameObject> Spawnables = new List<GameObject>();
+
     public void LevelUp(Skill skill)
     {
         skill.LevelUp();
@@ -25,7 +27,7 @@ public class Skill_Water : MonoBehaviour
     private void Start()
     {
         player = Managers.instance._player;
-        _skill200 = new Skill200(SkillReferenceObject.L1_2[0]);
+        _skill200 = new Skill200(SkillReferenceObject.L1_2[0], Spawnables);
         _skill210 = new Skill210(SkillReferenceObject.L1_2[1]);
         _skill220 = new Skill220(SkillReferenceObject.L1_2[2]);
         _skill230 = new Skill230(SkillReferenceObject.L1_2[3]);
@@ -33,20 +35,122 @@ public class Skill_Water : MonoBehaviour
         _skill250 = new Skill250(SkillReferenceObject.L1_2[5]);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            LevelUp(_skill200);
+        }
+    }
+    private static bool FindClosestEnemy(CircleCollider2D collider, Vector3 BasePosition, out GameObject ClosestEnemy)
+    {
+        ContactFilter2D cf = new ContactFilter2D();
+        GameObject closestEnemy = null;
+        LayerMask lm = new LayerMask();
+        lm.value = 1 << 7;
+        cf.SetLayerMask(lm);
+        cf.useTriggers = false;
+        bool found;
+        while (true)
+        {
+            List<Collider2D> result = new List<Collider2D>();
+            int count = collider.OverlapCollider(cf, result);
+            Debug.Log(count);
+            if (count < 1)
+            {
+                collider.radius += 5f;
+                if (collider.radius > 30f)
+                {
+                    collider.radius = 0.001f;
+                    found = false;
+                    break;
+                }
+            }
+            else
+            {
+                found = true;
+                float shortestDistance = Mathf.Infinity;
+                foreach (Collider2D item in result)
+                {
+                    Debug.Log(item.name);
+                    float tempDistance = Vector2.Distance(item.transform.position, BasePosition);
+                    if (tempDistance < shortestDistance)
+                    {
+                        shortestDistance = tempDistance;
+                        closestEnemy = item.gameObject;
+                    }
+                }
+                break;
+            }
+        }
+        if (found)
+        {
+            ClosestEnemy = closestEnemy;
+        }
+        else
+        {
+            ClosestEnemy = null;
+        }
+        return found;
+    }
+
     public class Skill200 : Skill
     {
-        public Skill200(GameObject skillObject)
+        public Skill200(GameObject skillObject, List<GameObject> spawnables)
         {
             skillID = 200;
             skillName = "물포탄 발사";
-            skillDesc = "착탄 위치에 범위 데미지를 입히는 물포탄을 발사한다. 물포탄은 가장 가까운 몬스터의 방향으로 발사된다.";
+            skillDesc = "착탄 위치에 범위 데미지를 입히는 물포탄을 발사한다. 물포탄은 가장 가까운 적의 방향으로 발사된다.";
             base.skillObject = skillObject;
             damage = 3f;
             coolDown = 1.5f;
             skillLevel = 0;
+            base.spawnables = spawnables;
         }
         public override IEnumerator SkillBehaviour(PlayerController player)
         {
+            skillObject.SetActive(true);
+            CircleCollider2D collider = skillObject.GetComponent<CircleCollider2D>();
+            Vector2 direction;
+            GameObject closestEnemy;
+            bool found;
+            while (true)
+            {
+                found = FindClosestEnemy(collider, skillObject.transform.position, out closestEnemy);
+                if (found)
+                {
+                    direction = closestEnemy.transform.position - skillObject.transform.position;
+                    direction.Normalize();
+                }
+                else
+                {
+                    direction = player._inputVector;
+                    if (direction.magnitude < 0.01f)
+                    {
+                        if (player._sprite.flipX)
+                        {
+                            direction = Vector2.left;
+                        }
+                        else
+                        {
+                            direction = Vector2.right;
+                        }
+                    }
+                    direction.Normalize();
+                }
+                GameObject Orb1 = Instantiate(spawnables[0], player.transform.position, Quaternion.identity);
+                Vector2 initPos = Orb1.transform.position;
+                Vector2 destPos = initPos + direction * 8f;
+                float elapsedTime = 0f;
+                while (elapsedTime < 1f && Orb1 != null)
+                {
+                    Orb1.transform.position = Vector2.Lerp(initPos, destPos, elapsedTime / 1f);
+                    elapsedTime += Time.deltaTime;
+                    yield return new WaitForEndOfFrame();
+                }
+                Destroy(Orb1, 3f);
+                yield return new WaitForSeconds(coolDown);
+            }
             yield return null;
         }
     }

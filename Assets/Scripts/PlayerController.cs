@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private int _damage = 10;                       // 플레이어가 받는 대미지
     private Animator _animator;
     public SpriteRenderer _sprite;
+    public bool isBarrierActive = false;
+    public float barrierValue = 0f;
     private static readonly int PlayerRun = Animator.StringToHash("Player_Run");
 
     void Awake()
@@ -71,7 +73,19 @@ public class PlayerController : MonoBehaviour
             return;
 
         // 플레이어가 적군한테 초당 대미지를 받는다.
-        Managers.instance.health -= Time.deltaTime * collision.gameObject.GetComponent<EnemyController>().enemyData.damage;
+        if (isBarrierActive)
+        {
+            barrierValue -= Time.deltaTime * collision.gameObject.GetComponent<EnemyController>().enemyData.damage;
+            if (barrierValue < 0f)
+            {
+                isBarrierActive = false;
+                barrierValue = 0f;
+            }
+        }
+        else
+        {
+            Managers.instance.health -= Time.deltaTime * collision.gameObject.GetComponent<EnemyController>().enemyData.damage;
+        }
 
         // 플레이어의 체력이 0보다 작을 때(플레이어가 죽었을 경우)
         if (Managers.instance.health < 0)

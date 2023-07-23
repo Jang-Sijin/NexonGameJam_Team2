@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4c4ae5223b07d0b4bad2e9b21e840e94
+guid: e1ce2d84d16e506469cc73ba8f005a9a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,6 +81,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -106,24 +119,53 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Skill_2_BOMB_0
+      name: Skill_2_move_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4096
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eac99081bfc402e41a050f3604baf98e
+      internalID: -1502174200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_2_move_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3072
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ce6b5b52b25d0a4b9be2c27031e4b62
+      internalID: 1864827250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_2_move_2
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 780426825eb6ae64494c194d1661d7a5
-      internalID: 1244934123
+      spriteID: 33f483fb5bb4f5c47a1e5a13e5783143
+      internalID: -887675097
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skill_2_BOMB_1
+      name: Skill_2_move_3
       rect:
         serializedVersion: 2
         x: 0
@@ -158,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fce63227465352149826c986c189329f
-      internalID: 608081046
+      spriteID: 37434b43f7d8d8c40956b841fd42b768
+      internalID: -880449689
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skill_2_BOMB_2
+      name: Skill_2_move_4
       rect:
         serializedVersion: 2
         x: 0
@@ -179,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13fdfcf7f1c77f34fa5405951487ce21
-      internalID: -336512240
+      spriteID: 5365fd66dbb46974fbc4c8d63dea16b4
+      internalID: 1330834964
       vertices: []
       indices: 
       edges: []
@@ -196,9 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Skill_2_BOMB_0: 1244934123
-      Skill_2_BOMB_1: 608081046
-      Skill_2_BOMB_2: -336512240
+      Skill_2_move_0: -1502174200
+      Skill_2_move_1: 1864827250
+      Skill_2_move_2: -887675097
+      Skill_2_move_3: -880449689
+      Skill_2_move_4: 1330834964
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

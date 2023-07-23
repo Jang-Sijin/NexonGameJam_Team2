@@ -35,13 +35,13 @@ public class Skill_Broomstick : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            LevelUp(_skill100);
-            LevelUp(_skill110);
-            LevelUp(_skill120);
-            LevelUp(_skill150);
-        }
+        //if (Input.GetKeyDown(KeyCode.G))
+        //{
+        //    LevelUp(_skill130);
+        //    LevelUp(_skill110);
+        //    LevelUp(_skill120);
+        //    LevelUp(_skill150);
+        //}
     }
 
     public class Skill100 : Skill
@@ -208,7 +208,7 @@ public class Skill_Broomstick : MonoBehaviour
         }
     }
 
-    //TODO: 스킬 구현
+
     public class Skill130 : Skill
     {
         public Skill130(GameObject skillObject)
@@ -223,6 +223,12 @@ public class Skill_Broomstick : MonoBehaviour
         }
         public override IEnumerator SkillBehaviour(PlayerController player)
         {
+            while (true)
+            {
+                player.isBarrierActive = true;
+                player.barrierValue = 15f;
+                yield return new WaitForSeconds(30f);
+            }
             yield return null;
         }
     }
