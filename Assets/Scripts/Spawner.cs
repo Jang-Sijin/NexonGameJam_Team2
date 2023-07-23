@@ -42,7 +42,7 @@ public class Spawner : MonoBehaviour
             boss.GetComponent<EnemyController>().Init();
         }
 
-        if (_timer > 2f)
+        if (_timer > 1.5f)
         {
             _timer = 0f;
             Spawn();
