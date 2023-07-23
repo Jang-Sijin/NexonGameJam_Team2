@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InfiniteMap.unity
     guid: 3e270181fafa60b47bbca49e2d29af56
+  - enabled: 1
+    path: Assets/Scenes/InfiniteMap2.unity
+    guid: 18d3a0cf21489cb438c31bad48dd7311
   m_configObjects: {}

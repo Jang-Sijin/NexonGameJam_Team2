@@ -1453,7 +1453,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainBgmAudioClip: {fileID: 8300000, guid: e0b6ea6fb07c29e49b445f638e2c647c, type: 3}
-  sfxAudioClips: []
+  sfxAudioClips:
+  - {fileID: 8300000, guid: a82bca371a7577044be31111d6c43935, type: 3}
+  - {fileID: 8300000, guid: 728c0b8adcb10074d935f64037fe3ed8, type: 3}
+  - {fileID: 8300000, guid: a9f76ea5db7b8cc40a07799f72168870, type: 3}
+  - {fileID: 8300000, guid: f63396257d488964f965d8a9d09367d9, type: 3}
+  - {fileID: 8300000, guid: fa984bf28f28d2841aef50c5a4792637, type: 3}
+  - {fileID: 8300000, guid: 4e4b95afc779cf2488ae975ebfdc9455, type: 3}
+  - {fileID: 8300000, guid: 456a402fe03a3e3429abdbbef404c3df, type: 3}
+  - {fileID: 8300000, guid: 70fbb35e257b4354eb0b74deccda8a2e, type: 3}
+  - {fileID: 8300000, guid: 2e32debc2d04c7d45b54c53bc316405e, type: 3}
+  - {fileID: 8300000, guid: 849f3e5a379c4e64e93a1a396423f1aa, type: 3}
 --- !u!4 &2122635774
 Transform:
   m_ObjectHideFlags: 0
@@ -1461,63 +1471,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122635772}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.16306601, y: 0.4832093, z: -8.464527}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2127238001
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2127238003}
-  - component: {fileID: 2127238002}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2127238002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2127238001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4426c8fcf5f68b41a47d648be1e0e3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _player: {fileID: 0}
-  Pool: {fileID: 0}
-  speed: 0
-  isLive: 0
-  health: 0
-  maxHealth: 100
-  level: 0
-  kill: 0
-  exp: 0
-  nextExp: 03000000050000000a0000001e0000003c0000006400000096000000d2000000b400000068010000c201000058020000bc02000020030000e8030000b0040000
-  _gameTime: 0
-  _maxGameTime: 1800
-  enemyCleaner: {fileID: 0}
---- !u!4 &2127238003
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2127238001}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.16306601, y: 0.4832093, z: -8.464527}
@@ -1534,5 +1487,4 @@ SceneRoots:
   - {fileID: 2019823352}
   - {fileID: 1050393522}
   - {fileID: 1381639817}
-  - {fileID: 2127238003}
   - {fileID: 2122635774}

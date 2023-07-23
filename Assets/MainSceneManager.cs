@@ -7,15 +7,18 @@ public class MainSceneManager : MonoBehaviour
 {
     public void FirstButton()
     {
-        SceneManager.LoadScene(1);
+        SoundManager.Instance.PlaySFXSound("Button");
+        SceneManager.LoadScene("InfiniteMap2");
     }
     public void SecondButton()
     {
+        SoundManager.Instance.PlaySFXSound("Button");
         //Managers.instance.
     }
 
     public void ThirdButton()
     {
+        SoundManager.Instance.PlaySFXSound("Button");
         Application.Quit();
     }
 }
