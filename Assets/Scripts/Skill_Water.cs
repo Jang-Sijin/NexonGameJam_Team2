@@ -14,6 +14,7 @@ public class Skill_Water : MonoBehaviour
     public Skill250 _skill250;
 
     public List<GameObject> Spawnables = new List<GameObject>();
+    public static GameObject ClosestEnemy = null;
 
     public void LevelUp(Skill skill)
     {
@@ -42,6 +43,7 @@ public class Skill_Water : MonoBehaviour
             LevelUp(_skill200);
         }
     }
+
     private static bool FindClosestEnemy(CircleCollider2D collider, Vector3 BasePosition, out GameObject ClosestEnemy)
     {
         ContactFilter2D cf = new ContactFilter2D();
@@ -112,32 +114,40 @@ public class Skill_Water : MonoBehaviour
             skillObject.SetActive(true);
             CircleCollider2D collider = skillObject.GetComponent<CircleCollider2D>();
             Vector2 direction;
-            GameObject closestEnemy;
-            bool found;
+            bool found=false;
             while (true)
             {
-                found = FindClosestEnemy(collider, skillObject.transform.position, out closestEnemy);
-                if (found)
+                if (ClosestEnemy != null)
                 {
-                    direction = closestEnemy.transform.position - skillObject.transform.position;
+                    direction = ClosestEnemy.transform.position - skillObject.transform.position;
                     direction.Normalize();
                 }
                 else
                 {
-                    direction = player._inputVector;
-                    if (direction.magnitude < 0.01f)
+                    found = FindClosestEnemy(collider, skillObject.transform.position, out ClosestEnemy);
+                    if (found)
                     {
-                        if (player._sprite.flipX)
-                        {
-                            direction = Vector2.left;
-                        }
-                        else
-                        {
-                            direction = Vector2.right;
-                        }
+                        direction = ClosestEnemy.transform.position - skillObject.transform.position;
+                        direction.Normalize();
                     }
-                    direction.Normalize();
+                    else
+                    {
+                        direction = player._inputVector;
+                        if (direction.magnitude < 0.01f)
+                        {
+                            if (player._sprite.flipX)
+                            {
+                                direction = Vector2.left;
+                            }
+                            else
+                            {
+                                direction = Vector2.right;
+                            }
+                        }
+                        direction.Normalize();
+                    }
                 }
+                
                 GameObject Orb1 = Instantiate(spawnables[0], player.transform.position, Quaternion.identity);
                 Vector2 initPos = Orb1.transform.position;
                 Vector2 destPos = initPos + direction * 8f;
@@ -148,7 +158,7 @@ public class Skill_Water : MonoBehaviour
                     elapsedTime += Time.deltaTime;
                     yield return new WaitForEndOfFrame();
                 }
-                Destroy(Orb1, 3f);
+                Destroy(Orb1, 1f);
                 yield return new WaitForSeconds(coolDown);
             }
             yield return null;
