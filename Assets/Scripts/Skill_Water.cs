@@ -38,8 +38,8 @@ public class Skill_Water : MonoBehaviour
         public Skill200(GameObject skillObject)
         {
             skillID = 200;
-            skillName = "¹°Æ÷Åº ¹ß»ç";
-            skillDesc = "ÂøÅº À§Ä¡¿¡ ¹üÀ§ µ¥¹ÌÁö¸¦ ÀÔÈ÷´Â ¹°Æ÷ÅºÀ» ¹ß»çÇÑ´Ù. ¹°Æ÷ÅºÀº °¡Àå °¡±î¿î ¸ó½ºÅÍÀÇ ¹æÇâÀ¸·Î ¹ß»çµÈ´Ù.";
+            skillName = "ë¬¼í¬íƒ„ ë°œì‚¬";
+            skillDesc = "ì°©íƒ„ ìœ„ì¹˜ì— ë²”ìœ„ ë°ë¯¸ì§€ë¥¼ ì…íˆëŠ” ë¬¼í¬íƒ„ì„ ë°œì‚¬í•œë‹¤. ë¬¼í¬íƒ„ì€ ê°€ì¥ ê°€ê¹Œìš´ ëª¬ìŠ¤í„°ì˜ ë°©í–¥ìœ¼ë¡œ ë°œì‚¬ëœë‹¤.";
             base.skillObject = skillObject;
             damage = 3f;
             coolDown = 1.5f;
@@ -55,13 +55,13 @@ public class Skill_Water : MonoBehaviour
         public Skill210(GameObject skillObject)
         {
             skillID = 210;
-            skillName = "ÇØÀÏ";
-            skillDesc = "ÇÃ·¹ÀÌ¾î·ÎºÎÅÍ °¡Àå °¡±î¿î ÀûÀÇ ¹æÇâÀ¸·Î ÆÄµµ¸¦ ¼ÒÈ¯ÇÑ´Ù. ÆÄµµ¿¡ ¸ÂÀº ÀûÀº ÆÄµµÀÇ ÁøÇà¹æÇâÀ¸·Î ¾à°£ ¹Ğ·Á³­´Ù.";
+            skillName = "í•´ì¼";
+            skillDesc = "í”Œë ˆì´ì–´ë¡œë¶€í„° ê°€ì¥ ê°€ê¹Œìš´ ì ì˜ ë°©í–¥ìœ¼ë¡œ íŒŒë„ë¥¼ ì†Œí™˜í•œë‹¤. íŒŒë„ì— ë§ì€ ì ì€ íŒŒë„ì˜ ì§„í–‰ë°©í–¥ìœ¼ë¡œ ì•½ê°„ ë°€ë ¤ë‚œë‹¤.";
             base.skillObject = skillObject;
             damage = 3f;
             coolDown = 5f;
             skillLevel = 0;
-            //ÁøÇà °Å¸®: 8 CM
+            //ì§„í–‰ ê±°ë¦¬: 8 CM
         }
         public override IEnumerator SkillBehaviour(PlayerController player)
         {
@@ -69,14 +69,14 @@ public class Skill_Water : MonoBehaviour
         }
     }
 
-    //TODO: ºøÀÚ·ç ½ºÇÁ¶óÀÌÆ® Àû¿ë
+    //TODO: ë¹—ìë£¨ ìŠ¤í”„ë¼ì´íŠ¸ ì ìš©
     public class Skill220 : Skill
     {
         public Skill220(GameObject skillObject)
         {
             skillID = 220;
-            skillName = "¾ÆÀÌ½º¹öÅ¶Ã§¸°Áö";
-            skillDesc = "ÇÃ·¹ÀÌ¾î°¡ ¹Ù¶óº¸´Â ¹æÇâÀ¸·Î ¾à°£ ¶³¾îÁø À§Ä¡¿¡ ¹°¼¼·Ê¸¦ ¶³¾îÆ®¸°´Ù.";
+            skillName = "ì•„ì´ìŠ¤ë²„í‚·ì±Œë¦°ì§€";
+            skillDesc = "í”Œë ˆì´ì–´ê°€ ë°”ë¼ë³´ëŠ” ë°©í–¥ìœ¼ë¡œ ì•½ê°„ ë–¨ì–´ì§„ ìœ„ì¹˜ì— ë¬¼ì„¸ë¡€ë¥¼ ë–¨ì–´íŠ¸ë¦°ë‹¤.";
             base.skillObject = skillObject;
             damage = 4f;
             coolDown = 2f;
@@ -89,14 +89,14 @@ public class Skill_Water : MonoBehaviour
         }
     }
 
-    //TODO: ½ºÅ³ ±¸Çö
+    //TODO: ìŠ¤í‚¬ êµ¬í˜„
     public class Skill230 : Skill
     {
         public Skill230(GameObject skillObject)
         {
             skillID = 230;
-            skillName = "Ä¡À¯ÀÇ ¼º¼ö";
-            skillDesc = "ÇÃ·¹ÀÌ¾îÀÇ Ã¼·ÂÀ» 2ÃÊ´ç 1¾¿ È¸º¹½ÃÅ²´Ù.";
+            skillName = "ì¹˜ìœ ì˜ ì„±ìˆ˜";
+            skillDesc = "í”Œë ˆì´ì–´ì˜ ì²´ë ¥ì„ 2ì´ˆë‹¹ 1ì”© íšŒë³µì‹œí‚¨ë‹¤.";
             base.skillObject = skillObject;
             damage = -1f;
             coolDown = 2f;
@@ -108,19 +108,19 @@ public class Skill_Water : MonoBehaviour
         }
     }
 
-    //TODO: ½ºÅ³ ±¸Çö
+    //TODO: ìŠ¤í‚¬ êµ¬í˜„
     public class Skill240 : Skill
     {
         public Skill240(GameObject skillObject)
         {
             skillID = 240;
-            skillName = "¹ã¾È°³";
-            skillDesc = "ÇÃ·¹ÀÌ¾îÀÇ ÇöÀç À§Ä¡¿¡ ¾È°³¸¦ ¼ÒÈ¯ÇØ ¾È°³ ¼Ó¿¡ ÀÖ´Â Àûµé¿¡°Ô Áö¼ÓÀûÀ¸·Î ÇÇÇØ¸¦ ÀÔÈù´Ù.";
+            skillName = "ë°¤ì•ˆê°œ";
+            skillDesc = "í”Œë ˆì´ì–´ì˜ í˜„ì¬ ìœ„ì¹˜ì— ì•ˆê°œë¥¼ ì†Œí™˜í•´ ì•ˆê°œ ì†ì— ìˆëŠ” ì ë“¤ì—ê²Œ ì§€ì†ì ìœ¼ë¡œ í”¼í•´ë¥¼ ì…íŒë‹¤.";
             base.skillObject = skillObject;
             damage = 1.5f;
             coolDown = 7f;
             skillLevel = 0;
-            //À¯Áö½Ã°£ 3ÃÊ
+            //ìœ ì§€ì‹œê°„ 3ì´ˆ
         }
         public override IEnumerator SkillBehaviour(PlayerController player)
         {
@@ -132,8 +132,8 @@ public class Skill_Water : MonoBehaviour
         public Skill250(GameObject skillObject)
         {
             skillID = 250;
-            skillName = "¹°ÀÇ °Ë";
-            skillDesc = "ÇÃ·¹ÀÌ¾î Àü¹æÀÇ ¿ø»Ô ¹üÀ§¸¦ ¹°ÀÇ °ËÀ¸·Î ÈÛ¾µ¾î ÇÇÇØ¸¦ ÀÔÈù´Ù.";
+            skillName = "ë¬¼ì˜ ê²€";
+            skillDesc = "í”Œë ˆì´ì–´ ì „ë°©ì˜ ì›ë¿” ë²”ìœ„ë¥¼ ë¬¼ì˜ ê²€ìœ¼ë¡œ íœ©ì“¸ì–´ í”¼í•´ë¥¼ ì…íŒë‹¤.";
             base.skillObject = skillObject;
             damage = 6f;
             coolDown = 3f;

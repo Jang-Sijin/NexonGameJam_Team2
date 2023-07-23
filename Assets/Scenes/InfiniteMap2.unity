@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 315957905}
   m_Layer: 0
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 444242800}
   - component: {fileID: 444242799}
   - component: {fileID: 444242804}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tilemap
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -4735,7 +4735,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tileMoveDistance: 40
-  _collider2D: {fileID: 0}
 --- !u!1 &753177915
 GameObject:
   m_ObjectHideFlags: 0
@@ -4751,7 +4750,7 @@ GameObject:
   - component: {fileID: 753177919}
   - component: {fileID: 753177918}
   - component: {fileID: 753177917}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tilemap (2)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -4786,7 +4785,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tileMoveDistance: 40
-  _collider2D: {fileID: 0}
 --- !u!66 &753177918
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -9217,7 +9215,7 @@ GameObject:
   - component: {fileID: 1106203345}
   - component: {fileID: 1106203344}
   - component: {fileID: 1106203343}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tilemap (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -9252,7 +9250,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tileMoveDistance: 40
-  _collider2D: {fileID: 0}
 --- !u!66 &1106203344
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -13499,7 +13496,7 @@ GameObject:
   - component: {fileID: 1721664785}
   - component: {fileID: 1721664784}
   - component: {fileID: 1721664783}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tilemap (3)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -13534,7 +13531,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tileMoveDistance: 40
-  _collider2D: {fileID: 0}
 --- !u!66 &1721664784
 CompositeCollider2D:
   m_ObjectHideFlags: 0

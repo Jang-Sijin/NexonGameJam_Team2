@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,7 +40,12 @@ public class Managers : MonoBehaviour
     // public ReStart uiResult;
     public GameObject enemyCleaner;
 
+    private SkillButtonGroup skillButtonGroup;
 
+    private void Start()
+    {
+        skillButtonGroup = UIManager.instance.selectSkillPanelObject.GetComponent<SkillButtonGroup>();
+    }
 
     void Awake()
     {
@@ -115,6 +121,15 @@ public class Managers : MonoBehaviour
             level++;
             exp = 0;
             // uiLevelUp.show();
+            
+            // 1. UI 오픈
+            UIManager.instance.selectSkillPanelObject.SetActive(true);
+            skillButtonGroup.SetSelectSkill();
+            UIManager.instance.UIOpenSelectSkillMenu();
+            // 2. 게임 시간 정지
+            // 3. 스킬 선택하면 수치 적용하고
+            // 4. UI 닫고
+            //UIManager.instance.UICloseSelectSkillMenu();
         }
     }
 
