@@ -4,7 +4,7 @@ using UnityEngine;
 public class PoolManager : MonoBehaviour
 {
     public GameObject[] _prefabs;
-    List<GameObject>[] _pools;
+    public List<GameObject>[] _pools;
 
     void Awake()
     {

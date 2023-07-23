@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1909576924782044800}
   - component: {fileID: -3453940815110706539}
   - component: {fileID: 8110776383135575786}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: E5
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -169,7 +169,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tileMoveDistance: 40
-  _collider2D: {fileID: 0}
 --- !u!60 &8110776383135575786
 PolygonCollider2D:
   m_ObjectHideFlags: 0

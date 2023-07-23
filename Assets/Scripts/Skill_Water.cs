@@ -13,6 +13,9 @@ public class Skill_Water : MonoBehaviour
     public Skill240 _skill240;
     public Skill250 _skill250;
 
+    public List<GameObject> Spawnables = new List<GameObject>();
+    public static GameObject ClosestEnemy = null;
+
     public void LevelUp(Skill skill)
     {
         skill.LevelUp();
@@ -25,7 +28,7 @@ public class Skill_Water : MonoBehaviour
     private void Start()
     {
         player = Managers.instance._player;
-        _skill200 = new Skill200(SkillReferenceObject.L1_2[0]);
+        _skill200 = new Skill200(SkillReferenceObject.L1_2[0], Spawnables);
         _skill210 = new Skill210(SkillReferenceObject.L1_2[1]);
         _skill220 = new Skill220(SkillReferenceObject.L1_2[2]);
         _skill230 = new Skill230(SkillReferenceObject.L1_2[3]);
@@ -33,20 +36,131 @@ public class Skill_Water : MonoBehaviour
         _skill250 = new Skill250(SkillReferenceObject.L1_2[5]);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            LevelUp(_skill200);
+        }
+    }
+
+    private static bool FindClosestEnemy(CircleCollider2D collider, Vector3 BasePosition, out GameObject ClosestEnemy)
+    {
+        ContactFilter2D cf = new ContactFilter2D();
+        GameObject closestEnemy = null;
+        LayerMask lm = new LayerMask();
+        lm.value = 1 << 7;
+        cf.SetLayerMask(lm);
+        cf.useTriggers = false;
+        bool found;
+        while (true)
+        {
+            List<Collider2D> result = new List<Collider2D>();
+            int count = collider.OverlapCollider(cf, result);
+            Debug.Log(count);
+            if (count < 1)
+            {
+                collider.radius += 5f;
+                if (collider.radius > 30f)
+                {
+                    collider.radius = 0.001f;
+                    found = false;
+                    break;
+                }
+            }
+            else
+            {
+                found = true;
+                float shortestDistance = Mathf.Infinity;
+                foreach (Collider2D item in result)
+                {
+                    Debug.Log(item.name);
+                    float tempDistance = Vector2.Distance(item.transform.position, BasePosition);
+                    if (tempDistance < shortestDistance)
+                    {
+                        shortestDistance = tempDistance;
+                        closestEnemy = item.gameObject;
+                    }
+                }
+                break;
+            }
+        }
+        if (found)
+        {
+            ClosestEnemy = closestEnemy;
+        }
+        else
+        {
+            ClosestEnemy = null;
+        }
+        return found;
+    }
+
     public class Skill200 : Skill
     {
-        public Skill200(GameObject skillObject)
+        public Skill200(GameObject skillObject, List<GameObject> spawnables)
         {
             skillID = 200;
-            skillName = "ë¬¼í¬íƒ„ ë°œì‚¬";
-            skillDesc = "ì°©íƒ„ ìœ„ì¹˜ì— ë²”ìœ„ ë°ë¯¸ì§€ë¥¼ ì…íˆëŠ” ë¬¼í¬íƒ„ì„ ë°œì‚¬í•œë‹¤. ë¬¼í¬íƒ„ì€ ê°€ì¥ ê°€ê¹Œìš´ ëª¬ìŠ¤í„°ì˜ ë°©í–¥ìœ¼ë¡œ ë°œì‚¬ëœë‹¤.";
+            skillName = "¹°Æ÷Åº ¹ß»ç";
+            skillDesc = "ÂøÅº À§Ä¡¿¡ ¹üÀ§ µ¥¹ÌÁö¸¦ ÀÔÈ÷´Â ¹°Æ÷ÅºÀ» ¹ß»çÇÑ´Ù. ¹°Æ÷ÅºÀº °¡Àå °¡±î¿î ÀûÀÇ ¹æÇâÀ¸·Î ¹ß»çµÈ´Ù.";
             base.skillObject = skillObject;
             damage = 3f;
             coolDown = 1.5f;
             skillLevel = 0;
+            base.spawnables = spawnables;
         }
         public override IEnumerator SkillBehaviour(PlayerController player)
         {
+            skillObject.SetActive(true);
+            CircleCollider2D collider = skillObject.GetComponent<CircleCollider2D>();
+            Vector2 direction;
+            bool found=false;
+            while (true)
+            {
+                if (ClosestEnemy != null)
+                {
+                    direction = ClosestEnemy.transform.position - skillObject.transform.position;
+                    direction.Normalize();
+                }
+                else
+                {
+                    found = FindClosestEnemy(collider, skillObject.transform.position, out ClosestEnemy);
+                    if (found)
+                    {
+                        direction = ClosestEnemy.transform.position - skillObject.transform.position;
+                        direction.Normalize();
+                    }
+                    else
+                    {
+                        direction = player._inputVector;
+                        if (direction.magnitude < 0.01f)
+                        {
+                            if (player._sprite.flipX)
+                            {
+                                direction = Vector2.left;
+                            }
+                            else
+                            {
+                                direction = Vector2.right;
+                            }
+                        }
+                        direction.Normalize();
+                    }
+                }
+                
+                GameObject Orb1 = Instantiate(spawnables[0], player.transform.position, Quaternion.identity);
+                Vector2 initPos = Orb1.transform.position;
+                Vector2 destPos = initPos + direction * 8f;
+                float elapsedTime = 0f;
+                while (elapsedTime < 1f && Orb1 != null)
+                {
+                    Orb1.transform.position = Vector2.Lerp(initPos, destPos, elapsedTime / 1f);
+                    elapsedTime += Time.deltaTime;
+                    yield return new WaitForEndOfFrame();
+                }
+                Destroy(Orb1, 1f);
+                yield return new WaitForSeconds(coolDown);
+            }
             yield return null;
         }
     }
@@ -55,13 +169,13 @@ public class Skill_Water : MonoBehaviour
         public Skill210(GameObject skillObject)
         {
             skillID = 210;
-            skillName = "í•´ì¼";
-            skillDesc = "í”Œë ˆì´ì–´ë¡œë¶€í„° ê°€ì¥ ê°€ê¹Œìš´ ì ì˜ ë°©í–¥ìœ¼ë¡œ íŒŒë„ë¥¼ ì†Œí™˜í•œë‹¤. íŒŒë„ì— ë§ì€ ì ì€ íŒŒë„ì˜ ì§„í–‰ë°©í–¥ìœ¼ë¡œ ì•½ê°„ ë°€ë ¤ë‚œë‹¤.";
+            skillName = "ÇØÀÏ";
+            skillDesc = "ÇÃ·¹ÀÌ¾î·ÎºÎÅÍ °¡Àå °¡±î¿î ÀûÀÇ ¹æÇâÀ¸·Î ÆÄµµ¸¦ ¼ÒÈ¯ÇÑ´Ù. ÆÄµµ¿¡ ¸ÂÀº ÀûÀº ÆÄµµÀÇ ÁøÇà¹æÇâÀ¸·Î ¾à°£ ¹Ğ·Á³­´Ù.";
             base.skillObject = skillObject;
             damage = 3f;
             coolDown = 5f;
             skillLevel = 0;
-            //ì§„í–‰ ê±°ë¦¬: 8 CM
+            //ÁøÇà °Å¸®: 8 CM
         }
         public override IEnumerator SkillBehaviour(PlayerController player)
         {
@@ -69,14 +183,14 @@ public class Skill_Water : MonoBehaviour
         }
     }
 
-    //TODO: ë¹—ìë£¨ ìŠ¤í”„ë¼ì´íŠ¸ ì ìš©
+    //TODO: ºøÀÚ·ç ½ºÇÁ¶óÀÌÆ® Àû¿ë
     public class Skill220 : Skill
     {
         public Skill220(GameObject skillObject)
         {
             skillID = 220;
-            skillName = "ì•„ì´ìŠ¤ë²„í‚·ì±Œë¦°ì§€";
-            skillDesc = "í”Œë ˆì´ì–´ê°€ ë°”ë¼ë³´ëŠ” ë°©í–¥ìœ¼ë¡œ ì•½ê°„ ë–¨ì–´ì§„ ìœ„ì¹˜ì— ë¬¼ì„¸ë¡€ë¥¼ ë–¨ì–´íŠ¸ë¦°ë‹¤.";
+            skillName = "¾ÆÀÌ½º¹öÅ¶Ã§¸°Áö";
+            skillDesc = "ÇÃ·¹ÀÌ¾î°¡ ¹Ù¶óº¸´Â ¹æÇâÀ¸·Î ¾à°£ ¶³¾îÁø À§Ä¡¿¡ ¹°¼¼·Ê¸¦ ¶³¾îÆ®¸°´Ù.";
             base.skillObject = skillObject;
             damage = 4f;
             coolDown = 2f;
@@ -89,14 +203,14 @@ public class Skill_Water : MonoBehaviour
         }
     }
 
-    //TODO: ìŠ¤í‚¬ êµ¬í˜„
+    //TODO: ½ºÅ³ ±¸Çö
     public class Skill230 : Skill
     {
         public Skill230(GameObject skillObject)
         {
             skillID = 230;
-            skillName = "ì¹˜ìœ ì˜ ì„±ìˆ˜";
-            skillDesc = "í”Œë ˆì´ì–´ì˜ ì²´ë ¥ì„ 2ì´ˆë‹¹ 1ì”© íšŒë³µì‹œí‚¨ë‹¤.";
+            skillName = "Ä¡À¯ÀÇ ¼º¼ö";
+            skillDesc = "ÇÃ·¹ÀÌ¾îÀÇ Ã¼·ÂÀ» 2ÃÊ´ç 1¾¿ È¸º¹½ÃÅ²´Ù.";
             base.skillObject = skillObject;
             damage = -1f;
             coolDown = 2f;
@@ -108,19 +222,19 @@ public class Skill_Water : MonoBehaviour
         }
     }
 
-    //TODO: ìŠ¤í‚¬ êµ¬í˜„
+    //TODO: ½ºÅ³ ±¸Çö
     public class Skill240 : Skill
     {
         public Skill240(GameObject skillObject)
         {
             skillID = 240;
-            skillName = "ë°¤ì•ˆê°œ";
-            skillDesc = "í”Œë ˆì´ì–´ì˜ í˜„ì¬ ìœ„ì¹˜ì— ì•ˆê°œë¥¼ ì†Œí™˜í•´ ì•ˆê°œ ì†ì— ìˆëŠ” ì ë“¤ì—ê²Œ ì§€ì†ì ìœ¼ë¡œ í”¼í•´ë¥¼ ì…íŒë‹¤.";
+            skillName = "¹ã¾È°³";
+            skillDesc = "ÇÃ·¹ÀÌ¾îÀÇ ÇöÀç À§Ä¡¿¡ ¾È°³¸¦ ¼ÒÈ¯ÇØ ¾È°³ ¼Ó¿¡ ÀÖ´Â Àûµé¿¡°Ô Áö¼ÓÀûÀ¸·Î ÇÇÇØ¸¦ ÀÔÈù´Ù.";
             base.skillObject = skillObject;
             damage = 1.5f;
             coolDown = 7f;
             skillLevel = 0;
-            //ìœ ì§€ì‹œê°„ 3ì´ˆ
+            //À¯Áö½Ã°£ 3ÃÊ
         }
         public override IEnumerator SkillBehaviour(PlayerController player)
         {
@@ -132,8 +246,8 @@ public class Skill_Water : MonoBehaviour
         public Skill250(GameObject skillObject)
         {
             skillID = 250;
-            skillName = "ë¬¼ì˜ ê²€";
-            skillDesc = "í”Œë ˆì´ì–´ ì „ë°©ì˜ ì›ë¿” ë²”ìœ„ë¥¼ ë¬¼ì˜ ê²€ìœ¼ë¡œ íœ©ì“¸ì–´ í”¼í•´ë¥¼ ì…íŒë‹¤.";
+            skillName = "¹°ÀÇ °Ë";
+            skillDesc = "ÇÃ·¹ÀÌ¾î Àü¹æÀÇ ¿ø»Ô ¹üÀ§¸¦ ¹°ÀÇ °ËÀ¸·Î ÈÛ¾µ¾î ÇÇÇØ¸¦ ÀÔÈù´Ù.";
             base.skillObject = skillObject;
             damage = 6f;
             coolDown = 3f;

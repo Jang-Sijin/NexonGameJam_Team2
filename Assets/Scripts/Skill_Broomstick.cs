@@ -35,13 +35,13 @@ public class Skill_Broomstick : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            LevelUp(_skill100);
-            LevelUp(_skill110);
-            LevelUp(_skill120);
-            LevelUp(_skill150);
-        }
+        //if (Input.GetKeyDown(KeyCode.G))
+        //{
+        //    LevelUp(_skill130);
+        //    LevelUp(_skill110);
+        //    LevelUp(_skill120);
+        //    LevelUp(_skill150);
+        //}
     }
 
     public class Skill100 : Skill
@@ -49,8 +49,8 @@ public class Skill_Broomstick : MonoBehaviour
         public Skill100(GameObject skillObject)
         {
             skillID = 100;
-            skillName = "ë¹—ìë£¨";
-            skillDesc = "ì¢Œìš°ë¡œ ì ì„ ê´€í†µí•˜ëŠ” ê·¼ì ‘ê³µê²©ì„ í•©ë‹ˆë‹¤.";
+            skillName = "ºøÀÚ·ç";
+            skillDesc = "ÁÂ¿ì·Î ÀûÀ» °üÅëÇÏ´Â ±ÙÁ¢°ø°İÀ» ÇÕ´Ï´Ù.";
             base.skillObject = skillObject;
             damage = 3f;
             coolDown = 1.5f;
@@ -83,8 +83,8 @@ public class Skill_Broomstick : MonoBehaviour
         public Skill110(GameObject skillObject)
         {
             skillID = 110;
-            skillName = "ì´ê¸°ì–´ê²€ìˆ ";
-            skillDesc = "í”Œë ˆì´ì–´ê°€ ë°”ë¼ë³´ëŠ” ë°©í–¥ìœ¼ë¡œ ë¹—ìë£¨ê°€ ë‚ ì•„ê°”ë‹¤ ëŒì•„ì˜¤ë©° ê²½ë¡œì— ìˆëŠ” ì ë“¤ì—ê²Œ í”¼í•´ë¥¼ ì¤ë‹ˆë‹¤.";
+            skillName = "ÀÌ±â¾î°Ë¼ú";
+            skillDesc = "ÇÃ·¹ÀÌ¾î°¡ ¹Ù¶óº¸´Â ¹æÇâÀ¸·Î ºøÀÚ·ç°¡ ³¯¾Æ°¬´Ù µ¹¾Æ¿À¸ç °æ·Î¿¡ ÀÖ´Â Àûµé¿¡°Ô ÇÇÇØ¸¦ Áİ´Ï´Ù.";
             base.skillObject = skillObject;
             damage = 4f;
             coolDown = 2f;
@@ -143,14 +143,14 @@ public class Skill_Broomstick : MonoBehaviour
         }
     }
 
-    //TODO: ë¹—ìë£¨ ìŠ¤í”„ë¼ì´íŠ¸ ì ìš©
+    //TODO: ºøÀÚ·ç ½ºÇÁ¶óÀÌÆ® Àû¿ë
     public class Skill120 : Skill
     {
         public Skill120(GameObject skillObject)
         {
             skillID = 120;
-            skillName = "ì†Œìš©ëŒì´ì¹˜ëŠ” ë¹—ìë£¨";
-            skillDesc = "í”Œë ˆì´ì–´ì˜ í˜„ì¬ ìœ„ì¹˜ì— íšŒì „í•˜ëŠ” ë¹—ìë£¨ë¥¼ ì„¤ì¹˜í•´ì„œ ë‹¿ëŠ” ì ë“¤ì—ê²Œ ì§€ì†ì ìœ¼ë¡œ í”¼í•´ë¥¼ ì…íŒë‹¤.";
+            skillName = "¼Ò¿ëµ¹ÀÌÄ¡´Â ºøÀÚ·ç";
+            skillDesc = "ÇÃ·¹ÀÌ¾îÀÇ ÇöÀç À§Ä¡¿¡ È¸ÀüÇÏ´Â ºøÀÚ·ç¸¦ ¼³Ä¡ÇØ¼­ ´ê´Â Àûµé¿¡°Ô Áö¼ÓÀûÀ¸·Î ÇÇÇØ¸¦ ÀÔÈù´Ù.";
             base.skillObject = skillObject;
             damage = 1f;
             coolDown = 2f;
@@ -208,14 +208,14 @@ public class Skill_Broomstick : MonoBehaviour
         }
     }
 
-    //TODO: ìŠ¤í‚¬ êµ¬í˜„
+
     public class Skill130 : Skill
     {
         public Skill130(GameObject skillObject)
         {
             skillID = 130;
-            skillName = "ë¹—ìë£¨ê°€ ì§€í‚¨ë‹¤";
-            skillDesc = "ë¹—ìë£¨ë¡œ ë°©ë²½ì„ ì„¸ì›Œ í”¼í•´ë¥¼ í¡ìˆ˜í•˜ëŠ” ë³´í˜¸ë§‰ì„ ì–»ëŠ”ë‹¤.";
+            skillName = "ºøÀÚ·ç°¡ ÁöÅ²´Ù";
+            skillDesc = "ºøÀÚ·ç·Î ¹æº®À» ¼¼¿ö ÇÇÇØ¸¦ Èí¼öÇÏ´Â º¸È£¸·À» ¾ò´Â´Ù.";
             base.skillObject = skillObject;
             damage = 0f;
             coolDown = 30f;
@@ -223,18 +223,24 @@ public class Skill_Broomstick : MonoBehaviour
         }
         public override IEnumerator SkillBehaviour(PlayerController player)
         {
+            while (true)
+            {
+                player.isBarrierActive = true;
+                player.barrierValue = 15f;
+                yield return new WaitForSeconds(30f);
+            }
             yield return null;
         }
     }
 
-    //TODO: ìŠ¤í‚¬ êµ¬í˜„
+    //TODO: ½ºÅ³ ±¸Çö
     public class Skill140 : Skill
     {
         public Skill140(GameObject skillObject)
         {
             skillID = 140;
-            skillName = "ê³µí¬ì˜ ë¹—ìë£¨";
-            skillDesc = "ë¹—ìë£¨ë¥¼ íœ˜ë‘˜ëŸ¬ ì ì¤‘í•œ ì ë“¤ì„ ë°€ì³ë‚¸ë‹¤. ";
+            skillName = "°øÆ÷ÀÇ ºøÀÚ·ç";
+            skillDesc = "ºøÀÚ·ç¸¦ ÈÖµÑ·¯ ÀûÁßÇÑ ÀûµéÀ» ¹ĞÃÄ³½´Ù. ";
             base.skillObject = skillObject;
             damage = 3f;
             coolDown = 2.5f;
@@ -250,8 +256,8 @@ public class Skill_Broomstick : MonoBehaviour
         public Skill150(GameObject skillObject)
         {
             skillID = 150;
-            skillName = "ë°”ë‹¥ì“¸ê¸°";
-            skillDesc = "ë¹—ìë£¨ë¡œ ë°”ë‹¥ì„ í¬ê²Œ íœ©ì“¸ë©° í”Œë ˆì´ì–´ ì¤‘ì‹¬ ì›í˜• ë²”ìœ„ì— í”¼í•´ë¥¼ ì…íŒë‹¤.";
+            skillName = "¹Ù´Ú¾µ±â";
+            skillDesc = "ºøÀÚ·ç·Î ¹Ù´ÚÀ» Å©°Ô ÈÛ¾µ¸ç ÇÃ·¹ÀÌ¾î Áß½É ¿øÇü ¹üÀ§¿¡ ÇÇÇØ¸¦ ÀÔÈù´Ù.";
             base.skillObject = skillObject;
             damage = 5f;
             coolDown = 2.5f;

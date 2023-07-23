@@ -38,7 +38,7 @@ public class Reposition : MonoBehaviour
         {
             // 타일맵 이동
             case "Ground":
-                if (Mathf.Abs(difX - difY) <= 3f)
+                if (Mathf.Abs(difX - difY) <= 5f)
                 {
                     transform.Translate(Vector3.up * dirY * _tileMoveDistance);
                     transform.Translate(Vector3.right * dirX * _tileMoveDistance);
@@ -53,7 +53,7 @@ public class Reposition : MonoBehaviour
                 }
                 break;
             case "Enemy":
-                if (_collider2D.enabled) transform.Translate(playerPos * 20 + new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f), 0f));
+                if (_collider2D.enabled) transform.position = (playerPos + 15 * new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f));
                 break;
         }
     }

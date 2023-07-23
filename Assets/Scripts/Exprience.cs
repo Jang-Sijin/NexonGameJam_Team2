@@ -6,9 +6,12 @@ public class Exprience : MonoBehaviour
 {
     public int exp;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Managers.instance.GetExp(exp);
-        gameObject.SetActive(false);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Managers.instance.GetExp(exp);
+            gameObject.SetActive(false);
+        }
     }
 }

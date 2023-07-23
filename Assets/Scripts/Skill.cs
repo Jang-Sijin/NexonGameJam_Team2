@@ -11,6 +11,7 @@ public abstract class Skill
     public string skillDesc;
     public Sprite skillIcon;
     public GameObject skillObject;
+    public List<GameObject> spawnables;
 
     public int skillLevel;
 
