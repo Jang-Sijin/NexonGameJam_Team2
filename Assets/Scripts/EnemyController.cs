@@ -70,7 +70,7 @@ public class EnemyController : MonoBehaviour
     public void Init()
     {
         // _animator.runtimeAnimatorController = animCon[data._spriteType];
-        _speed = enemyData.speed;
+        _speed = enemyData.speed * Managers.instance._player._moveSpeed;
         MaxHealth = enemyData.HP;
         Health = enemyData.HP;
         damage = enemyData.damage;
