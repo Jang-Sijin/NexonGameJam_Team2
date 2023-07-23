@@ -53,7 +53,7 @@ public class Reposition : MonoBehaviour
                 }
                 break;
             case "Enemy":
-                if (_collider2D.enabled) transform.position = (playerPos + 10 * new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f));
+                if (_collider2D.enabled) transform.position = (playerPos + 15 * new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f));
                 break;
         }
     }
