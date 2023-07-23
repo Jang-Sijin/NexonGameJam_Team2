@@ -288,7 +288,7 @@ public class SkillButtonGroup : MonoBehaviour
             do
             {
                 // 1부터 maxNumber까지의 난수를 뽑습니다.
-                randomNumber = Random.Range(1, maxNumber + 1);
+                randomNumber = Random.Range(0, maxNumber);
 
                 // 뽑힌 난수가 배열에 이미 존재하는지 체크
                 isDuplicate = false;
