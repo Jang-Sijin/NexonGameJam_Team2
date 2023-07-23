@@ -38,7 +38,7 @@ public class Spawner : MonoBehaviour
         if (Managers.instance._gameTime > bossData[bossLevel].spawnTime * 60f)
         {
             GameObject boss = Instantiate(bossData[bossLevel].monster);
-            boss.transform.position = _spawnPoint[UnityEngine.Random.Range(0, _spawnPoint.Length)].position;
+            boss.transform.position = _spawnPoint[UnityEngine.Random.Range(1, _spawnPoint.Length)].position;
             boss.GetComponent<EnemyController>().Init();
         }
 
@@ -52,7 +52,7 @@ public class Spawner : MonoBehaviour
     void Spawn()
     {
         GameObject enemy = Managers.instance.Pool.Get(UnityEngine.Random.Range(spawnData[spawnLevel].firstIndex, spawnData[spawnLevel].lastIndex + 1));
-        enemy.transform.position = _spawnPoint[UnityEngine.Random.Range(0, _spawnPoint.Length)].position;
+        enemy.transform.position = _spawnPoint[UnityEngine.Random.Range(1, _spawnPoint.Length)].position;
         enemy.GetComponent<EnemyController>().Init();
     }
 
